@@ -2,9 +2,6 @@
 
 function getNumber() {
     let userNumber = $('#number').val();
-    if (!userNumber) {
-        userNumber = 3;
-    }
     return userNumber;
 }
 
@@ -18,6 +15,7 @@ function getDogImage(number) {
 
 function displayImage(responseJson, number) {
     console.log(responseJson);
+    $('.results').removeClass('hidden');
     for (let i = 0; i < number; i ++) {
         $('.results').append(
             `<img src="${responseJson.message[i]}" class="results-img">`
